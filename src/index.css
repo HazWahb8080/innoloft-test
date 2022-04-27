@@ -1,13 +1,65 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+@layer components { 
+    .smooth {
+        @apply ease-in-out duration-200 transition
+    }
+    .header { 
+        @apply z-40 w-full py-4 px-4 items-start justify-start flex  border-b border-black/10 shadow-md shadow-gray-500/5
+    }
+    .navbar { 
+        @apply h-full hidden xl:flex bg-[#DDDDDD]/20 w-[300px] border-r border-gray-200 items-center justify-center flex py-6 
+    }
+    .nav-container { 
+        @apply items-center justify-start flex flex-col h-full w-full pt-36
+    }
+    .nav-title-container { 
+        @apply w-full items-center justify-center flex py-3 hover:bg-[#272E71]/30 cursor-pointer smooth
+    }
+    .nav-title { 
+        @apply text-lg font-sans text-[#445063] text-center font-medium 
+        group-hover:text-black/90 smooth w-full border-b border-transparent
+    }
+    .active-nav-title { 
+        @apply text-lg font-sans font-medium
+         text-center text-[#e4b302] smooth w-full border-b border-black/5
+    }
+    .title-mob-nav{
+        @apply py-2 px-5 border border-black/40 
+        cursor-pointer rounded-xl smooth hover:bg-black/60 hover:text-[#e4b302]
+          shadow-sm shadow-[#e4b302]/50  
+    }
+    .active-title-mob-nav{
+        @apply py-2 px-5 border border-black/40 rounded-xl 
+        smooth bg-black/60 shadow-sm shadow-[#e4b302]/50
+    }
+
+
+    /* //product page  */
+    .product-window { 
+        @apply flex-1 h-full py-3 px-3 w-full flex items-center justify-center
+    }
+    .product-container {
+        @apply h-full w-full rounded-xl  items-center justify-center flex
+    }
+    .loading-container {
+        @apply h-full w-full  rounded-xl py-12 px-6
+    }
+    .product-section { 
+        @apply items-start justify-start flex w-full bg-gray-500/5 rounded-xl border border-gray-100
+    }
+    .tab-container {
+        @apply flex w-full items-center justify-center 
+    }
+    .tab-title { 
+        @apply cursor-pointer text-gray-600 w-1/2 pb-2 smooth text-center 
+        text-lg font-sans border-b border-transparent hover:border-black hover:text-black
+    }
+    .active-tab-title {
+        @apply tab-title border-b border-black text-black
+    }
+
 }
